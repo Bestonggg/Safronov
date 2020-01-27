@@ -1,0 +1,6 @@
+H:\users\429284-21\documents\visual studio 2013\Projects\Programma\Programma\bin\Debug\Programma.exe.config
+H:\users\429284-21\documents\visual studio 2013\Projects\Programma\Programma\bin\Debug\Programma.exe
+H:\users\429284-21\documents\visual studio 2013\Projects\Programma\Programma\bin\Debug\Programma.pdb
+H:\users\429284-21\documents\visual studio 2013\Projects\Programma\Programma\obj\Debug\Programma.csprojResolveAssemblyReference.cache
+H:\users\429284-21\documents\visual studio 2013\Projects\Programma\Programma\obj\Debug\Programma.exe
+H:\users\429284-21\documents\visual studio 2013\Projects\Programma\Programma\obj\Debug\Programma.pdb
