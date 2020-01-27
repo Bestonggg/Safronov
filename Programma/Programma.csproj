@@ -41,6 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Safronov\LinearEquation.cs" />
+    <Compile Include="Safronov\MyLog .cs" />
+    <Compile Include="Safronov\QuadraticEquation.cs" />
+    <Compile Include="Safronov\SafronovExeption.cs" />
+    <Compile Include="Core\EquationInterface.cs" />
+    <Compile Include="Core\LogAbstract.cs" />
+    <Compile Include="Core\LogInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

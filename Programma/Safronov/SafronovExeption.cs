@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programma
+namespace Safronov
 {
-
-    class Program
+    class SafronovExeption : Exception
     {
-        static void Main(string[] args)
+        public SafronovExeption(string message)
+            : base(message)
         {
+
         }
     }
 }

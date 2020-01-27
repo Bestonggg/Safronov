@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Programma
+namespace Core
 {
-
-    class Program
+    interface EquationInterface
     {
-        static void Main(string[] args)
-        {
-        }
+        List<double> solve(int a, int b, int c);
     }
 }
