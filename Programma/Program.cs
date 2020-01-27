@@ -6,43 +6,107 @@ using System.Threading.Tasks;
 
 namespace Programma
 {
-    class A
+    class ClassA
     {
+        protected List<double> myAL = new List<double>();
 
+
+        public List<double> MyAL
+        {
+            get { return myAL; }
+            set { myAL = value; }
+        }
+        public List<double> linearEquation(int a, int b)
+        {
+            if (a == 0)
+            {
+                throw new Exception("Уравнение не существует!");
+            }
+            myAL.Add((double)-b / a);
+
+            return myAL;
+        }
     }
 
-    class B : A
+    class ClassB : ClassA
     {
-        object a1;
-        object a2;
-        object a3;
-        object a4;
-        public object A
-        {
-            get { return a1; }
-            set { a1 = value; }
-        }
 
-        public B(object obj1, object obj2, object obj3, object obj4)
+        protected double discriminant(int a, int b, int c)
         {
-            this.a1 = obj1;
-            this.a2 = obj2;
-            this.a3 = obj3;
-            this.a4 = obj4;
 
+            return b * b - 4 * a * c;
 
         }
 
 
-    }
 
-    class Program
-    {
-        static void Main(string[] args)
+        public List<double> solve(int a, int b, int c)
         {
-            A a = new A();
-            B b = new B(a, a, a, a);
 
+            if (a == 0)
+                return linearEquation(b, c);
+            double d = this.discriminant(a, b, c);
+
+
+            if (d == 0)
+            //Корень один
+            {
+
+                myAL.Add((-b + Math.Sqrt(d)) / 2 * a);
+
+
+            }
+            else if (d > 0)
+            // два корня
+            {
+                myAL.Add((-b + Math.Sqrt(d)) / 2 * a);
+                myAL.Add((-b - Math.Sqrt(d)) / 2 * a);
+
+            }
+            else throw new Exception("Корней нет! D<0");
+
+            return myAL;
+
+
+        }
+
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                try
+                {
+                    ClassB b = new ClassB();
+                    b.solve(3, 12, 8);
+                    int count = b.MyAL.Count;
+
+                    if (count == 0)
+                    {
+                        Console.WriteLine("Количество корней: " + count);
+                        Console.WriteLine("D<0 Корней нет");
+                    }
+                    if (count == 1)
+                    {
+                        Console.WriteLine("Количество корней: " + count);
+                        Console.WriteLine(b.MyAL[0]);
+
+                    }
+
+                    if (count == 2)
+                    {
+                        Console.WriteLine("Количество корней: " + count);
+                        Console.WriteLine(b.MyAL[0] + " " + b.MyAL[1]);
+
+                    }
+
+
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                Console.ReadKey();
+            }
         }
     }
 }
